@@ -1,0 +1,33 @@
+
+
+
+
+
+
+body{
+    background-color: lawngreen;
+    font-family: "Comic Neue", cursive;
+    font-weight: 700;
+    font-style: italic;     
+}
+h1 strong,marquee strong{
+    color: red;
+}
+ul li a {
+    color: red;
+    
+}
+header ul li{
+    display: inline;
+}
+header ul li a{
+    text-decoration: wavy;
+}
+
+header, main, footer{
+    border: dotted orange;
+    margin: 25px 10px 50px 10px; 
+}
+footer{
+    background-color: forestgreen;
+}

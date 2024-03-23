@@ -1,0 +1,15 @@
+*{
+   background: blue;
+}
+body main ,body p, body section ,body h1 ,body h2 , body li ,body a, body ul, body ol{
+   background: white;
+}
+body section{
+   border:solid;
+   border-color: black;
+}
+body{
+   width: 60%;
+   margin: 0 auto;
+   padding: 2% 0;
+}
