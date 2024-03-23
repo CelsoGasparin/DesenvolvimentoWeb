@@ -1,15 +1,29 @@
 *{
    background: blue;
 }
-body main ,body p, body section ,body h1 ,body h2 , body li ,body a, body ul, body ol{
+body main ,body p, body section ,body h1 ,body h2 , body li ,body a, body ul, body ol, body img,body abbr{
    background: white;
 }
 body section{
-   border:solid;
-   border-color: black;
+
+   margin-top: 0px;
+   padding-bottom: 5px;
+   border-top: solid 1px gray;
 }
 body{
    width: 60%;
    margin: 0 auto;
    padding: 2% 0;
+}
+body h1, body h2{
+   color: rgb(140, 76, 8);
+}
+body main .endereco{
+   list-style-image: url(images/loc.png);
+}
+body main .telefone{
+   list-style-image: url(images/telefone.png);
+}
+body main .mail{
+   list-style-image: url(images/gmail.png);
 }
