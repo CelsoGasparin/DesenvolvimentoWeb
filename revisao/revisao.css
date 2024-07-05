@@ -1,0 +1,42 @@
+*{
+    
+   
+
+}
+
+header{
+    background: magenta;
+    
+    height: 60px;
+
+
+}
+
+
+main{
+    background: limegreen;
+    height: calc(100vh - 120px);  
+}
+
+
+footer{
+    background: tomato;
+    
+    height: 60px;
+}
+
+p{
+    background: steelblue;
+    
+    
+
+
+}
+
+
+
+
+b{
+    background: springgreen;
+    
+}
