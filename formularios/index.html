@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="default.css">
+</head>
+<body>
+    <h1>Formulários</h1>
+
+    <h2>Elemento input</h2>
+    
+    <form action="#">
+
+        
+        <div>
+            <label for="campo_nome">nome:</label>
+            <input type="text" name="campo_nome" id="campo_nome" value="jonas">
+        </div>
+        <div>
+            <label for="campo_idade">Idade:</label>
+            <input type="number" min="0" max="150" name="campo_idade" id="campo_idade">
+        </div>
+        
+        <div>
+            
+            <label for="">
+                <input type="radio" name="campo_turno" value="manhã">
+                manhã
+            </label>
+            <label for="">
+                <input type="radio" name="campo_turno" value="tarde" checked>
+                tarde
+            </label>
+            <label for="">
+                <input type="radio" name="campo_turno" value="noite">
+                noite
+            </label>
+
+        </div>
+        
+        
+    </form>
+    
+    <div>
+        <input type="submit">
+    </div>
+</body>
+</html>

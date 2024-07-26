@@ -10,7 +10,7 @@ body{
     font-weight: 700;
     font-style: italic;     
 }
-h1 strong,marquee strong{
+main p strong,h1 strong,marquee strong{
     color: red;
 }
 ul li a {
@@ -22,12 +22,18 @@ header ul li{
 }
 header ul li a{
     text-decoration: wavy;
+    
 }
 
 header, main, footer{
     border: dotted orange;
-    margin: 25px 10px 50px 10px; 
+    margin: 25px 10px 50px 10px;
+   
 }
 footer{
     background-color: forestgreen;
+}
+
+body main p{
+    min-width: 100px;
 }
