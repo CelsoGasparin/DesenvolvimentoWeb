@@ -1,50 +1,170 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- Include Editor JS files. -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js"></script>
+    <!-- Include Editor style. -->
+    <link href="https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+
+
     <link rel="stylesheet" href="default.css">
+    <style>
+
+        #cor-favorita{
+            
+            width: 200px;
+            padding: 5px 20px;
+            border-radius: 5px;
+
+        }
+        #cor-favorita option{
+
+            width: 200px;
+            padding: 5px 20px;
+
+        }
+        #cor-favorita option[value="valor-vermelho"] {
+
+            background-color: red;
+
+        }
+        #cor_favorita option[value="valor-azul"] {
+
+            background-color: blue;
+
+        }
+        #cor_favorita option[value="valor-verde"] {
+
+            background-color: green;
+
+        }
+        /*customização do campo nome*/
+        input#campo_nome{
+            width: 200px;
+            padding: 5px 20px;
+            border-radius: 5px;
+            border: 0 transparent;
+            outline: 0 transparent;
+            transition: all 0.5s;
+            
+        }
+        input#campo_nome:focus{
+            background:mintcream;
+            width: 250px;
+        }
+
+
+        input[type="submit"]{
+            width: 200px;
+            padding: 5px 20px;
+            border-radius: 5px;
+            
+            transition: all 0.5s;
+        }
+        input[type="submit"]:hover{
+            background-color: rgb(123, 255, 0);
+        }
+
+    </style>
 </head>
+
 <body>
+
     <h1>Formulários</h1>
 
     <h2>Elemento input</h2>
-    
-    <form action="#">
 
-        
+    <form action="#">
         <div>
             <label for="campo_nome">nome:</label>
-            <input type="text" name="campo_nome" id="campo_nome" value="jonas">
+            <input type="text" id="campo_nome" name="campo_nome" value="Oi">
         </div>
+
         <div>
-            <label for="campo_idade">Idade:</label>
-            <input type="number" min="0" max="150" name="campo_idade" id="campo_idade">
+            <label for="campo_idade">idade:</label>
+            <input type="number" id="campo_idade" name="campo_idade" min="0" max="255">
         </div>
-        
+
         <div>
-            
-            <label for="">
-                <input type="radio" name="campo_turno" value="manhã">
+            <label for="campo_cor">cor:</label>
+            <input type="color" id="campo_cor" name="campo_cor">
+        </div>
+
+        <div>
+            <label for="campo_arquivo">arquivo:</label>
+            <input type="file" accept="image/*" capture="camera" name="campo_arquivo">
+        </div>
+
+        <div>
+
+            <label for="campo_turno_manha">
+                <input type="radio" name="campo_turno" value="manhã" id="campo_turno_manha" checked>
                 manhã
             </label>
-            <label for="">
-                <input type="radio" name="campo_turno" value="tarde" checked>
+
+            <label for="campo_turno_tarde">
+                <input type="radio" name="campo_turno" value="tarde" id="campo_turno_tarde">
                 tarde
             </label>
-            <label for="">
-                <input type="radio" name="campo_turno" value="noite">
+
+            <label for="campo_turno_noite">
+                <input type="radio" name="campo_turno" value="noite" id="campo_turno_noite">
                 noite
             </label>
 
         </div>
-        
-        
+
+        <div>
+
+            <label for="id_prato">
+               Prato Principal<input type="checkbox" value="prato_principal" id="id_prato" name="opcoes">     
+            </label>
+
+            <label for="id_salada">
+               Salada <input type="checkbox" value="salada" id="id_salada" name="opcoes">
+            </label>
+
+            <label for="id_sobrem">
+                Sobremesa <input type="checkbox" value="sobremesa" id="id_sobrem" name="opcoes">
+            </label>
+
+        </div>
+
+        <div>
+            <select name="cor-favorita" id="cor-favorita" required>
+                <option value="">Selecione um opção</option>
+                <option value="valor-verde">Verde</option>
+                <option value="valor-vermelho">Vermelho</option>
+                <option value="valor-azul">Azul</option>
+
+            </select>
+
+        </div>
+
+        <div>
+
+            <textarea name="" id="" cols="" rows=""></textarea>
+
+        </div>
+
+
+
+        <div>
+            <input type="submit">
+        </div>
     </form>
-    
-    <div>
-        <input type="submit">
-    </div>
+
+    <script>
+        new FroalaEditor('textarea');
+    </script>
+
+
+
+
 </body>
+
 </html>
