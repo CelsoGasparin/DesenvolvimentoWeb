@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulários_2</title>
+</head>
+<body>
+
+
+    <form action="submit.php" method="POST">
+
+        <h3>Cadastre-se</h3>
+
+
+
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" placeholder="nome completo">
+        </div>
+        <div class="form-group">
+            <label for="data-nascimento">Data de nascimento:</label>
+            <input type="date" name="data-nascimento" id="data-nascimento">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" name="email" id="email">
+        </div>
+        <div class="form-group">
+
+            <label>Habilidades:</label>
+            <label for="html">
+                <input type="checkbox" name="habilidades" id="html" value="html">HTML
+            </label>
+            <label for="css">
+                <input type="checkbox" name="habilidades" id="css" value="css">CSS
+            </label>
+            <label for="js">
+                <input type="checkbox" name="habilidades" id="js" value="JavaScript">JavaScript
+
+
+            </label>
+        </div>
+
+        <div class="form-group">
+
+            <label for="pais">País:</label>
+            <select name="pais" id="pais">
+
+                <option value="br">Brasil</option>
+                <option value="us">Estados Unidos</option>
+                <option value="in">Índia</option>
+                <option value="de">Alemanha</option>
+
+
+            </select>
+
+        </div>
+
+
+
+
+        <div class="form-group">
+            <label for="comentarios">Comentários:</label>
+            <textarea name="comentarios" id="comentarios"></textarea>
+        </div>
+
+        <div class="form-group">
+
+            <button type="submit">Enviar</button>
+
+
+        </div>
+
+
+
+
+
+
+    </form>
+
+
+
+    
+</body>
+</html>
