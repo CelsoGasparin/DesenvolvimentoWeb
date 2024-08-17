@@ -1,32 +1,139 @@
+
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+
 *{
     margin: 0;
     padding: 0;
+    overflow: hidden;
     
-    
+
+    box-sizing: border-box;
+}
+/*body{
+    background-color: gray;
+} é uma opção de deixar o fundo cinza*/
+
+
+.page-container{
+    background-color: #ddd;
+}
+
+.page{
+    width: 1200px;
+    height: calc(100vh - 150px - 200px);
+    min-height: 300px;
+    margin: 0 auto;
+    /* border: solid 1px red; */
 }
 
 .menu{
-    height: 100px;
-    background-color: #B2D6FF;
+    height: 150px;
+    background-color: #0c41aa;
 }
+
+.menu .column{
+    
+    height: 115px;
+    width: 25%;
+    margin-top: 20px;
+    /* border: solid 1px red; */
+    float:left;
+}
+.menu-container{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.menu .column.search-bar{
+    width: 50%;
+    text-align: center;
+    
+}
+
+.menu .column.search-bar input[type="search"]{
+
+    width: 70%;
+    padding: 15px 15px;
+    border-radius: 2px;
+    border: none;
+    outline: none;
+    margin-top: 20px;
+
+
+}
+.menu .column.search-bar button{
+
+    
+    padding: 15px 15px;
+    border-radius: 2px;
+    border: none;
+    outline: none;
+    background: #f10e34;
+    color: #fff;    
+
+}
+.menu .botao{
+
+    width: 42%;
+    background: #0c41aa;
+    float: left;
+    padding: 6px 15px;
+    margin: 30px 10px 10px 10px;
+    
+
+}
+.menu .botao:hover{
+    background-color: #083999
+}
+.menu .botao i{
+    background: #083999;
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 16px;
+}
+.menu .botao i:hover{
+    background: #092e7a;
+
+}
+.menu .botao a{
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+
+
+
+}
+
 
 .sidebar{
     
+    height: 300px;
     width: 200px;
     float: left;
-    height: 300px;
-    background-color: chocolate;
+    background-color: #fff;
 }
 .content{
     
-    width:600px;
-    float: left;
+    width:900px;
     height: 500px;
-    background-color: darkgoldenrod;
+    float: left;
+    margin-left: 30px;
+    background-color: #fff;
     
 }
 .footer{
-    
+    /* clear: both;  só precisa se estiver dentro do .page   */
     height:200px;
-    background-color: aqua;
+    background-color: #f10e34;
 }
+
+
+@media
+
+
+
+
+
