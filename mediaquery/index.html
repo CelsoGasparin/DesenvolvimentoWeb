@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query</title>
+
+    <style>
+
+        body{
+            background-color: gray;
+        }
+        h1{
+            font-size: 20px;
+        }
+
+
+
+
+
+        /* Específico para tablets*/
+
+        @media (max-width:767px){
+
+            body{
+                background-color: red;
+                color: #fff;
+
+
+            }
+            h1{
+                font-size: 50px;
+            }
+            .img-pequena{
+                display: block;
+            }
+            .img-grande{
+                display: none;
+            }
+            .img img{
+            max-width: 100%;
+            min-width: 100%;
+            }
+  
+
+        }
+        @media (min-width:768px) and (max-width:1023px){
+
+            body{
+                background-color: black;
+                color: rgb(213, 255, 252);
+
+
+            }
+            h1{
+                font-size: 45px;
+            }
+            .img img{
+            max-width: 100%;
+            min-width: 100%;
+            }
+
+        }
+        @media (min-width:1024px){
+
+            body{
+                background-color: rgb(0, 89, 24);
+                color: rgb(255, 248, 219);
+
+
+            }
+            h1{
+                font-size: 45px;
+            }
+            .img-pequena{
+                display: none;
+            }
+            .img img{
+            max-width: 100%;
+            min-width: 100%;
+            }
+        }
+   
+
+    </style>
+
+
+
+
+</head>
+<body>
+    
+    <h1>MEDIA QUERY</h1>
+    <div class="img img-grande">
+        <img src="https://placehold.co/1000x400" alt="">
+    </div>
+    <div class="img img-pequena">
+        <img src="https://placehold.co/500x400" alt="">
+    </div>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis molestiae alias consequuntur ad sapiente aperiam libero,
+        ipsam harum quasi porro nobis exercitationem quos rerum est vitae pariatur. Dolorem id laudantium ipsum eum reiciendis.
+        Mollitia expedita, incidunt accusamus placeat est debitis, modi repellat possimus dolore maxime harum fugit, voluptate non aut?</p> 
+
+
+
+
+
+
+</body>
+</html>
