@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --ametist-color: #9b59b6; 
+    --sunflower-color: #f1c40f; 
+    --carrot-color: #e67e22;
+    --col-1: calc(100%/12);
+    --col-2: calc((100%/12)*2);
+    --col-3: calc((100%/12)*3);
+    --col-4: calc((100%/12)*4);
+    --col-5: calc((100%/12)*5);
+    --col-6: calc((100%/12)*6);
+    --col-7: calc((100%/12)*7);
+    --col-8: calc((100%/12)*8);
+    --col-9: calc((100%/12)*9);
+    --col-10: calc((100%/12)*10);
+    --col-11: calc((100%/12)*11); 
+    --col-12: 100%;
+    
+}
+
+body {
+    /*background: #e8e7e7;*/
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+h1, h2, h3 {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.container  {
+    background: #fff;
+    /* realizar atividade */
+    margin: 0 auto;
+    padding: 15px;
+    overflow: auto;  
+}
+
+.menu ul {
+    margin: 20px 10px 10px 10px;
+}
+
+.menu ul li {
+    display: inline-block;
+    padding: 10px;
+}
+
+.menu-responsivo {
+    padding: 10px;
+    font-size: 32px;
+    /* realizar atividade */
+    
+}
+
+.caixa-container {
+    /* realizar atividade */
+    float: left;
+}
+
+
+.caixa {
+    min-height: 200px;
+    
+    margin: 10px;
+    padding: 10px;
+    
+    text-align: center;
+    line-height: 150px;
+    
+    background: #27ae60;
+    color: #fff;
+
+}
+
+
+
+@media (min-width:993px){
+    
+    .container{        
+        min-width: 993px;
+    }
+    .caixa-container{
+        width: var(--col-3);
+    }
+    .menu-responsivo{
+        display: none;   
+    }
+    body{
+        background: #e8e7e7;
+    }
+    
+}
+@media ((min-width:769px) and (max-width:992px)){
+    .container{        
+        width: 768px;
+    }
+    .caixa-container{
+        width: var(--col-4);
+    }
+    .menu-responsivo{
+        display: none;   
+    }
+    body{
+        background: var(--ametist-color);
+    }
+}
+@media ((min-width:577px) and (max-width:768px)){
+    
+    .container{        
+        width: 576px;
+    }
+    .caixa-container{
+        width: var(--col-6);
+    }
+    .menu-responsivo{
+        display: none;   
+    }
+    body{
+        background: var(--sunflower-color);
+    }
+
+}
+@media (max-width:576px){
+    .container{
+        width: var(--col-12);
+    }
+    .caixa-container{
+        width:var(--col-12);
+    }
+    body{
+        background:var(--carrot-color) ;
+    }
+    .menu ul li{
+        display: none;
+    }  
+}
