@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+
+
+
+    <style>
+
+
+        body{
+            background-color: rgb(24, 24, 24);
+            color: rgb(227, 251, 255);;
+        }
+
+
+
+        body .flex{
+
+            background: rgb(0, 0, 0);
+            
+            display: flex;
+            /*justify-content: center;
+            align-items: center;
+            height: 300px;*/
+            gap: 10px;
+            padding: 5px 20px 5px 20px;
+        }
+        .flex-row{
+            flex-direction: row;
+        }
+        .flex-row-reverse{
+            flex-direction: row-reverse;
+        }
+        .flex-column{
+            flex-direction: column;
+        }
+        .flex-column-reverse{
+            flex-direction: column-reverse;
+        }
+
+
+
+
+
+
+        .caixa{
+            flex-grow: 1;
+            background-color:#f3d925;/*essa cor doi o olho,não é legal*/
+            
+            color: rgb(0, 0, 0);
+            font-size: 20px;
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+            
+            
+        }
+        
+        .radius{
+            border-radius: 10px;
+            
+        }
+
+        
+    </style>
+</head>
+
+
+<body>
+
+
+    <h2>ROW</h2>
+    <div class="flex flex-row radius">
+        
+        <div class="caixa radius">heroi1</div>
+        <div class="caixa radius">heroi2</div>
+        <div class="caixa radius">heroi3</div>
+        <div class="caixa radius">heroi4</div>
+        <div class="caixa radius">heroi5</div>
+
+    </div>
+    <h2>ROW-REVERSE</h2>
+    <div class="flex flex-row-reverse radius">
+        
+        <div class="caixa radius">heroi1</div>
+        <div class="caixa radius">heroi2</div>
+        <div class="caixa radius">heroi3</div>
+        <div class="caixa radius">heroi4</div>
+        <div class="caixa radius">heroi5</div>
+        
+    </div>
+    <h2>COLUMN</h2>
+    <div class="flex flex-column radius">
+        
+        <div class="caixa radius">heroi1</div>
+        <div class="caixa radius">heroi2</div>
+        <div class="caixa radius">heroi3</div>
+        <div class="caixa radius">heroi4</div>
+        <div class="caixa radius">heroi5</div>
+        
+    </div>
+    <h2>COLUMN-REVERSE</h2>
+    <div class="flex flex-column-reverse radius">
+        
+        <div class="caixa radius">heroi1</div>
+        <div class="caixa radius">heroi2</div>
+        <div class="caixa radius">heroi3</div>
+        <div class="caixa radius">heroi4</div>
+        <div class="caixa radius">heroi5</div>
+        
+    </div>
+    
+</body>
+
+
+
+
+</html>
