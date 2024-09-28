@@ -1,15 +1,15 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
+    font-family: "Ubuntu",sans-serif;
 
 
 
 }
-
-
-
 
 
 
@@ -23,7 +23,7 @@
     
     width: 1320px;
     margin: 0 auto;
-    border: dotted 2px #000;
+    /* border: dotted 2px #000; */
     
     
 }
@@ -50,4 +50,129 @@
     list-style: none;
     gap: 20px;
     
+    
 }
+/* FIM CABECALHO */
+/* MENU */
+.menu{
+    display: flex;
+    
+    height: 60px;
+    background-image: linear-gradient(180deg, #FFF 0%, #DBDBDB 100%);
+}
+.menu .conteudo{
+    display: flex;
+    align-items: center;
+    
+    
+}
+.menu .conteudo ul{
+    display: flex;
+    list-style: none;
+    flex-basis: 100%;
+    justify-content: space-around;
+}
+.menu ul li a{
+    font-weight: 450;
+    color: rgb(0, 60, 106);
+    text-decoration: none;
+    padding: 18px;
+    border-radius: 10px;
+}
+.menu ul li a:hover{
+
+
+    background-color: rgb(237, 237, 237);
+    color:#0082C4;
+}
+/*$$$ FIM MENU $$$*/
+/*$$$ BANNER $$$*/
+.banner{
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    
+}
+/*$$$ FIM BANNER $$$*/
+
+
+/*$$$ NOTICIAS COMPETENCIAS $$$*/
+
+.noticia-competencias{
+
+    background-image:  linear-gradient(180deg,#00315E 0%, #000825 100%);
+    color: rgb(231, 250, 255);
+    
+    
+}
+
+.noticia-competencias h2{
+    font-weight: 900;
+    padding-top: 80px;
+    font-size: 30px;
+}
+
+
+.conteudo-noticias{
+    display: flex;
+    gap: 15px;
+    
+}
+
+.card-noticias{
+    
+    flex-basis: 25%;
+    background-color: #FFF;
+    border-radius: 10px;
+    overflow: hidden;
+    color: #000;
+    
+    
+
+}
+.card-noticias .card-noticias-imagem {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+}
+.card-noticias .card-noticias-imagem .card-noticia-data{
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 139, 0.526);
+    position: absolute;
+    top: 171px;
+    width: 100%;
+    color: aliceblue;
+    
+}
+.card-noticias-imagem img{
+    width: 100%;
+    border: solid 1px #0082C4;
+    transition: transform 0.5s ease-out; 
+    
+
+}
+.card-noticias  .card-noticias-imagem img:hover{
+    
+    transform: scale(1.2);
+
+}
+.card-noticias-texto{
+    
+    margin: 15px;    
+}
+
+
+
+.card-noticias .leia-mais .btn{
+    background: #DBDBDB;
+    padding: 5px 10px;
+    margin: 10px;
+    border-radius: 15px;
+    
+    text-decoration: none;
+    float:right;
+}
+
