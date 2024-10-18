@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <button>Clique aqui</button>
+    <p></p>
+        
+    <input type="text">
+
+    <p></p>
+
+
+
+    <script>
+
+
+
+        const button = document.querySelector('button');
+        const text = document.querySelectorAll('p');
+        const input = document.querySelector('input');
+        let clicks = 0 ;
+
+        // button.onclick = function (){
+        //     clicks++;
+        //     text[0].innerText = "O botão foi clicado "+ clicks +" vezes.";
+        //     //console.log('clicou o botao');
+            
+        // }
+        //console.log(button.onclick);
+
+        // function contaClick(){
+        //     clicks++;
+        //     text[0].innerText = "O botão foi clicado "+ clicks +" vezes.";
+        //     console.log('clicou o botao');
+            
+        // }
+
+        button.addEventListener('click', function (){
+            clicks++;
+            text[0].innerText = "O botão foi clicado "+ clicks +" vezes.";
+            //console.log('clicou o botao');
+        })
+
+        input.addEventListener('keyup', ()=>{
+            let textoDigitado = input.value;
+            if(textoDigitado == 'Calabresa'){
+                text[1].innerText = 'Com certeza um dos sabores que existem';
+            }else if(textoDigitado == 'Abacaxi'){
+            text[1].innerText = 'KYS';
+            }else if(textoDigitado == 'chocolate'){
+                text[1].innerText = "eu amo sorvete de chocolate(isso não era sobre pizza?)";
+            }else{
+                text[1].innerText = 'conheço essa não';
+            }
+        });
+        
+        document.addEventListener('click', ()=>{
+            let bgColor = 'rgb('+ Math.random()*255 +','+ Math.random()*255 +','+ Math.random()*255 +')';
+            document.body.style.backgroundColor = bgColor;
+            
+        })
+
+
+    </script>
+
+
+</body>
+</html>

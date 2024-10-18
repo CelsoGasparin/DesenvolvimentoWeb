@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <button>Clique aqui para a contagem regressiva</button>
+    <p></p>
+
+
+
+
+
+
+    <script>
+        
+        const button = document.querySelector('button');
+        const text = document.querySelector('p');
+        let contador = 10;
+        
+        
+        button.addEventListener('click',()=>{
+            
+            
+            
+            
+            let interval = setInterval(()=>{
+                if(contador <= 0){
+                    text.innerText = 'Acabou o Tempo!';    
+                    clearInterval(interval);
+                }    
+                text.innerText = contador;
+                contador--;
+            }, 1000);
+            
+            
+            
+            
+            
+        })
+
+        
+        
+        
+        
+        
+        </script>
+
+</body>
+</html>
