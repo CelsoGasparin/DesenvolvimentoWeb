@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atv7</title>
+</head>
+<body>
+    
+
+    <img src="https://imgs.search.brave.com/Y9Bx0KrcMf6gFbO0QZL4C1QS0Vh2_LCpGWUT0njfu48/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMxLmNicmltYWdl/cy5jb20vd29yZHBy/ZXNzL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDI0LzA3L2JpbGwt/Y2lwaGVyLWluLXdl/aXJkbWFnZWRkb24u/anBn" alt="">
+    <h1>CHEGUEI</h1>
+
+
+
+
+    <script>
+
+        let bill = document.querySelector('img');
+        let hum = document.querySelector('h1');
+
+        bill.addEventListener('mouseenter',()=>{
+            bill.src = 'https://imgs.search.brave.com/pjlhwTIWEreViQgWeLmuwaLmfZLKhcINX06aqYOu2Tk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbnNp/ZGV0aGVtYWdpYy5u/ZXQvd3AtY29udGVu/dC91cGxvYWRzLzIw/MjMvMTIvYmlsbC1j/aXBoZXItYmVpbmct/ZXZpbC5qcGc';
+            hum.textContent = 'Favor Tirar esse objeto pontudo de minha propriedade(não estou pedindo)';
+        });
+        bill.addEventListener('mouseleave',()=>{
+            bill.src = 'https://imgs.search.brave.com/Y9Bx0KrcMf6gFbO0QZL4C1QS0Vh2_LCpGWUT0njfu48/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMxLmNicmltYWdl/cy5jb20vd29yZHBy/ZXNzL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDI0LzA3L2JpbGwt/Y2lwaGVyLWluLXdl/aXJkbWFnZWRkb24u/anBn';
+            hum.textContent = 'Obrigado por escutar minha ordem';
+        })
+        bill.addEventListener('mousemove',()=>{
+            // bill.src = 'https://imgs.search.brave.com/pjlhwTIWEreViQgWeLmuwaLmfZLKhcINX06aqYOu2Tk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbnNp/ZGV0aGVtYWdpYy5u/ZXQvd3AtY29udGVu/dC91cGxvYWRzLzIw/MjMvMTIvYmlsbC1j/aXBoZXItYmVpbmct/ZXZpbC5qcGc';
+            hum.textContent = 'Favor Tirar esse objeto pontudo de minha propriedade(Você foi avisado)';
+        })
+        bill.addEventListener('click',()=>{
+            hum.textContent = 'NÃO ME ENCOSTA';
+        });
+
+
+
+
+    </script>
+
+</body>
+</html>

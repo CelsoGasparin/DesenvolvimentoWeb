@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atv8&9</title>
+</head>
+<body>
+
+
+    <input type="text">
+    <p></p>
+
+    <script>
+
+        let input = document.querySelector('input');
+        let texto = document.querySelector('p');
+
+        input.addEventListener('keyup',()=>{
+            
+
+            switch (input.value) {
+                case 'chocolate':
+                    texto.textContent = 'Eu amo sorvete de chocolate!';
+                break;
+            
+                case 'flocos':
+                    texto.textContent = 'Chocolate é meu sabor de sorvete favorito.'
+                break;
+
+                case 'Escuro':
+
+                document.body.style.background = 'rgb(0, 0, 25)';
+                texto.style.color = 'rgb(255, 255 , 255)';
+
+                break;
+
+                case 'Claro':
+
+                document.body.style.background = 'rgb(255, 255, 255)';
+                texto.style.color = 'rgb(0, 0 , 0)';
+
+
+                break;
+
+                default:
+
+                texto.textContent = 'Eu esperava um sabor de sorvete...';
+
+                break;
+            }
+        })
+
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>

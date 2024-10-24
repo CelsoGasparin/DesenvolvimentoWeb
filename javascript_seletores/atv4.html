@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atv4</title>
+
+
+
+
+</head>
+<body>
+
+    <div class="teste">
+        <button>Clique aqui</button>
+        <p>0</p>
+
+    </div>
+
+
+    <script>
+
+        let button = document.querySelector('button');
+        let clicks = 0;
+        let p = document.querySelector('p');
+        p.textContent = clicks;        
+
+
+
+
+        button.addEventListener('click',()=>{
+            clicks++;
+            p.textContent = clicks;
+        });
+
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atv3</title>
+</head>
+<body>
+    
+    <h1>OI</h1>
+    
+
+
+    <script>
+        let hum = document.querySelector('h1');
+        let clicks = 0;
+
+        document.addEventListener('click',()=>{
+            clicks++;
+            hum.textContent = 'Texto completamente diferente número '+clicks;
+
+            hum.style.color = 'rgb('+ Math.random()*255 +','+ Math.random()*255 +','+ Math.random()*255 +')';
+            hum.style.fontSize = Math.floor(Math.random()*70)+'px';
+
+        })        
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>

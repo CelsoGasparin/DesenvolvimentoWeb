@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atv6</title>
+</head>
+<body>
+
+    <button>Gerar Nome</button>
+    <h1>Seu Titulo aqui</h1>
+
+
+
+
+    <script>
+
+        const titles = ["Sr.", "Mister", "Dom", "Lord", "Lady", "Capitão", "Dama"];
+        const names = ["Arthur", "Gwendolyn", "Merlin", "Lancelot", "Morgana", "Ragnar", "Éowyn"];
+        const classes = ["Mago", "Paladino", "Arqueiro", "Ladino", "Bárbaro", "Feiticeiro", "Cavaleiro"];
+        const locations = ["Valfenda", "Gondor", "Asgard", "Camelot", "Nárnia", "Babilônia", "Atlantis"];
+        let botao = document.querySelector('button');
+        let hum = document.querySelector('h1');
+        botao.style.backgroundColor = 'rgb(80, 80, 230)';
+        botao.style.borderRadius = '10px';
+        botao.style.color = 'rgb(255, 255 ,255)';
+        botao.style.width = '230px';
+        botao.style.height = '20px';
+        //isso aqui deveria ser um crime
+
+
+
+
+        botao.addEventListener('click',()=>{
+
+            hum.textContent = titles[Math.floor(Math.random()*7)]+" "+names[Math.floor(Math.random()*7)]
+                            +", O "+classes[Math.floor(Math.random()*7)]+" de "+locations[Math.floor(Math.random()*7)];
+            
+
+
+        })
+
+
+
+    </script>
+    
+</body>
+</html>
