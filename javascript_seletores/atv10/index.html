@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atv10</title>
+    <!-- <link rel="stylesheet" href=""> -->
+     <style>
+
+        .erro{
+            display: none;
+            color: red;
+        }
+        .grupo{
+            padding: 10px;
+        }
+        input.invalido{
+            border: solid 2px red;
+            border-radius: 5px;
+        }
+        input{
+            flex-grow: 1;
+            outline: none;
+            border-radius: 5px;
+        }
+        form{
+            display: flex;
+            justify-content:center;
+            flex-direction: column;
+            align-items: center;
+            height: 1000px;
+            width: 100%;
+        }
+        .divs{
+        display: flex;
+        justify-content:center;
+        flex-direction: column;
+        align-items: center;
+        width: 40%;
+        height: 400px;
+        }
+        
+
+     </style>
+</head>
+<body>
+    
+
+
+
+
+
+    <form action="">
+
+        <div class="divs">
+
+            <div class="grupo">
+                <input type="text" placeholder="Informe seu nome">
+                <span class="erro">O nome deve ter pelo menos três caracteres</span>
+            </div>
+            <div class="grupo">
+                <input type="email" placeholder="Informe seu eMail">
+                <span class="erro">o email precisa ser válido</span>
+            </div>
+            <div class="grupo">
+                <input type="password" placeholder="Informe sua senha">
+                <a class="togglePassword">&#128065;</a>
+                <span class="erro">A senha precisa de 8 caracteres</span>
+    
+    
+            </div>
+            <div class="grupo">
+                <input type="password" placeholder="Confirme sua Senha">
+                <a class="togglePassword">&#128065;</a>
+                <span class="erro">a confirmação não corresponde à Senha</span>
+            </div>
+            <div class="grupo">
+                <input type="submit">
+            </div>
+
+        </div>
+        
+    </form>
+    
+
+
+
+
+    <script>
+        
+        const inputs = document.querySelectorAll('input');
+        let erros = document.querySelectorAll('.erro');
+
+
+        function validaNome(){
+
+            if(inputs[0].value.length <= 3){
+                validaTudo(true,0);
+                // erros[0].style.display = 'block';
+                // inputs[0].classList.add('invalido');
+            }else{
+                validaTudo(false,0);
+                // erros[0].style.display = 'none';
+                // inputs[0].classList.remove('invalido');
+            }
+
+
+        }
+        function validaEmail(){
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+            if(!emailRegex.test(inputs[1].value)){
+                validaTudo(true,1);
+            }else{
+                validaTudo(false,1);
+            }
+        
+            
+
+        }
+        function validaSenha(){
+            const senhaRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+
+            if(!senhaRegex.test(inputs[2].value)){
+                validaTudo(true,2);
+            }else{
+                validaTudo(false,2);
+            }
+
+
+        }
+        function confirmaSenha(){
+            if(inputs[3].value != inputs[2].value){
+                validaTudo(true,3);  
+            }else{
+                validaTudo(false,3);
+            }
+        }
+        function validaTudo(bool,key){
+
+            if(bool){
+                erros[key].style.display = 'block';
+                inputs[key].classList.add('invalido');
+            }else{
+                erros[key].style.display = 'none';
+                inputs[key].classList.remove('invalido');
+            }
+
+
+        }
+
+        inputs[0].addEventListener('input',validaNome);
+        inputs[1].addEventListener('input',validaEmail);
+        inputs[2].addEventListener('input',validaSenha);
+        inputs[3].addEventListener('input',confirmaSenha);
+        document.querySelector('form').addEventListener('submit',(evento)=>{
+
+            evento.preventDefault();
+
+            validaNome();
+            validaEmail();
+            validaSenha();
+            confirmaSenha();
+        });
+        document.querySelector('.togglePassword').addEventListener('click',()=>{
+            const tipoAtual = inputs[2].getAttribute('type');
+
+            const tipo = tipoAtual === 'password' ? 'text' : 'password';
+
+            inputs[2].type = tipo;
+        });
+    </script>
+
+
+
+</body>
+</html>
