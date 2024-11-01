@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>desafio1</title>
+</head>
+<body>
+    
+
+
+    <button>escuro</button>
+    <button>claro</button>
+    <p>Tamanho FONTE</p>
+    <input type="number" placeholder="Digite o tamanho da fonte">
+    <script>
+
+
+        let buttons = document.querySelectorAll("button");
+        let input = document.querySelector('input');
+        // let modoEscuro = false;
+        preferencias(localStorage.getItem('fundo'));
+        
+        buttons[0].addEventListener("click",()=>{
+            // modoEscuro = true;
+            localStorage.setItem('fundo','black');
+            
+            
+
+            preferencias(localStorage.getItem('fundo'));
+        });
+        buttons[1].addEventListener("click",()=>{
+            // modoEscuro = false;
+            localStorage.setItem('fundo','white');
+            
+            preferencias(localStorage.getItem('fundo'));
+        });
+        input.addEventListener('keyup',()=>{
+            preferencias('atual-fonte');
+        });
+        
+        // localStorage.setItem('fundo',modoEscuro);
+        
+        
+        function preferencias(param) {
+            switch (param) {
+                case 'black':
+                    document.body.style.backgroundColor = localStorage.getItem('fundo');
+                    document.body.style.color = 'rgb(227, 251, 255)';
+                    buttons[0].style.borderColor = 'rgb(227, 251, 255)';
+                    buttons[0].style.background = 'black';
+                    buttons[0].style.color = 'rgb(227, 251, 255)';
+                    buttons[1].style.borderColor = 'rgb(227, 251, 255)';
+                    buttons[1].style.background = 'black';
+                    buttons[1].style.color = 'rgb(227, 251, 255)';
+                break;
+            
+                case'white':
+                    document.body.style.backgroundColor = localStorage.getItem('fundo');
+                    document.body.style.color = 'black';
+                    buttons[0].style.borderColor = 'black';
+                    buttons[0].style.background = 'white';
+                    buttons[0].style.color = 'black';
+                    buttons[1].style.borderColor = 'black';
+                    buttons[1].style.background = 'white';
+                    buttons[1].style.color = 'black';
+                break;
+                case'atual-fonte':
+                document.body.style.fontSize = input.value+'px';
+                break;
+            }
+        }
+        
+        // modoFundo(localStorage.getItem('fundo'));
+    </script>
+
+
+</body>
+</html>

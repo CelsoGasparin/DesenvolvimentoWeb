@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>desafio2</title>
+
+    <style>
+
+        ul button{
+        
+        }
+
+
+
+
+    </style>
+
+
+
+
+</head>
+<body>
+    
+
+
+    <input type="text" placeholder="Insira sua nota aqui">
+    <button>Enviar</button>
+    <ul>
+        
+    </ul>
+
+
+
+
+    <script>
+        let input = document.querySelector('input');
+        let button = document.querySelector('button');
+        let lista = document.querySelector('ul');
+        
+        console.log(lista)
+        
+        button.addEventListener('click',()=>{
+            let novoItem = document.createElement('li');
+            let removerButton = document.createElement('button');
+        
+            removerButton.textContent = 'x';
+            removerButton.addEventListener('click',()=>{
+                novoItem.remove();
+                removerButton.remove();
+                deletarLocalStorage(novoItem.textContent);
+            });
+            novoItem.textContent = input.value;
+            if(novoItem.textContent != ''){
+                lista.appendChild(novoItem);
+                lista.appendChild(removerButton);
+                salvarLocalStorage(novoItem.textContent);
+                
+                contas++;
+            }
+            
+        });
+
+
+
+        function salvarLocalStorage(tarefa){
+            let tarefas = obterTodasTarefas();
+
+            tarefas.push(tarefa);
+
+
+            localStorage.setItem('tarefas',JSON.stringify(tarefas))
+        }
+        function deletarLocalStorage(tarefa){
+            let tarefas = obterTodasTarefas();
+            
+            tarefas.splice(tarefas.indexOf(tarefa),1);
+
+            localStorage.setItem('tarefas',JSON.stringify(tarefas))
+        }
+
+        function obterTodasTarefas(){
+
+            let tarefas = localStorage.getItem('tarefas');
+
+            if(tarefas){
+                tarefas = JSON.parse(tarefas);
+            }else{
+
+                tarefas = [];
+            }
+            return tarefas;
+        }
+        function reiniciarLista(){
+            let tarefas = localStorage.getItem('tarefas');
+            tarefas.forEach(element => {
+                
+            });
+        }
+    </script>
+
+
+</body>
+</html>
