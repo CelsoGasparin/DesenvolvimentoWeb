@@ -40,6 +40,7 @@
         carrinho = JSON.parse(carrinho);
         console.log(carrinho);
         let itens = document.querySelector('.actualCarrinho');
+        let compraTotal = 0;
         for(const key in carrinho) {
             const item = carrinho[key];
             itens.innerHTML += `<div class="item-carrinho">
@@ -56,8 +57,11 @@
             <button class="botao-remover">Remover</button>
         </div>`;
 
-            
+            compraTotal += carrinho[key].preço;
         }
+
+
+        
 
 
 
