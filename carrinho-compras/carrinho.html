@@ -27,10 +27,7 @@
             
         </div>
 
-        <div class="total">
-            <p>Total: R$ 50,00</p>
-            <button class="botao-comprar">Finalizar Compra</button>
-        </div>
+        
     </main>
 
 
@@ -38,7 +35,7 @@
 
         let carrinho = localStorage.getItem('carrinho');
         carrinho = JSON.parse(carrinho);
-        console.log(carrinho);
+        // console.log(carrinho);
         let itens = document.querySelector('.actualCarrinho');
         let compraTotal = 0;
         for(const key in carrinho) {
@@ -50,19 +47,68 @@
                     <h2>`+carrinho[key].nome+`</h2>
                     <p class="preco">R$ `+carrinho[key].preço+`</p>
                     <label for="quantidade">Quantidade:</label>
-                    <input type="number" id="quantidade" name="quantidade" min="1" value="`+carrinho[key].quantidade+`">
+                    <input type="number" class="quantidade" name="quantidade" min="1" value="`+carrinho[key].quantidade+`">
                 </div>
             </div>
 
             <button class="botao-remover">Remover</button>
         </div>`;
 
-            compraTotal += carrinho[key].preço;
+            compraTotal += (carrinho[key].preço*carrinho[key].quantidade);
         }
+        compraTotal = compraTotal.toFixed(2);
+        document.querySelector('.carrinho').innerHTML += `<div class="total">
+            <p>Total: R$`+compraTotal+`</p>
+            <button class="botao-comprar">Finalizar Compra</button>
+        </div>`;
+        // let item_carrinho = document.querySelectorAll('.item-carrinho');
+        let item_carrinho_quantidade = document.querySelectorAll('.item-info .quantidade');
+        let item_carrinho_remover = document.querySelectorAll('.item-carrinho .botao-remover');
+        let item_carrinho = document.querySelectorAll('.item-carrinho');
+        console.log(item_carrinho_quantidade);
 
 
-        
+        for(const key in item_carrinho_quantidade){
 
+            item_carrinho_quantidade[key].addEventListener('click',()=>{
+                // console.log(item_carrinho_quantidade[key].value);
+                if(item_carrinho_quantidade[key].value != carrinho[key].quantidade){
+                    carrinho[key].quantidade = item_carrinho_quantidade[key].value;
+                    localStorage.setItem('carrinho',JSON.stringify(carrinho));
+                    atualizarPrecoTotal();
+                }
+            });
+
+            item_carrinho_remover[key].addEventListener('click',()=>{
+
+                delete carrinho[key]
+                localStorage.setItem('carrinho',JSON.stringify(carrinho));
+                atualizarPrecoTotal();
+                item_carrinho[key].innerHTML = ``;
+                console.log(carrinho);
+
+            });
+        }
+        // for(const key in item_carrinho_quantidade){
+            
+        //     item_carrinho_quantidade[key].addEventListener('click',()=>{
+
+        //         console.log(item_carrinho_quantidade[key]);
+
+
+        //     });
+        // }
+        function atualizarPrecoTotal(){
+            let compraTotal = 0;
+            let finalizarCompra = document.querySelector('.carrinho .total')
+            for(const key in carrinho){
+                compraTotal += (carrinho[key].preço*carrinho[key].quantidade);
+            }
+            compraTotal = compraTotal.toFixed(2);
+            finalizarCompra.innerHTML = `<p>Total: R$`+compraTotal+`</p>
+            <button class="botao-comprar">Finalizar Compra</button>`;
+            return compraTotal;
+        }
 
 
     </script>
