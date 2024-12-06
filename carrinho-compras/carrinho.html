@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -12,6 +13,7 @@
     <header>
         <h1>Loja Online</h1>
         <div class="carrinho-badge">
+            <a href="index.html">VOLTAR</a>
             <a href="#">
                 <i class="bi bi-cart icone-carrinho"></i>
                 <span class="contador">3</span>
@@ -66,7 +68,16 @@
         let item_carrinho_remover = document.querySelectorAll('.item-carrinho .botao-remover');
         let item_carrinho = document.querySelectorAll('.item-carrinho');
         console.log(item_carrinho_quantidade);
-
+        // console.log(document.querySelector('.carrinho .botao-comprar'));
+        document.querySelector('.carrinho .botao-comprar').addEventListener('click',()=>{
+            for(const key in item_carrinho){
+                delete carrinho[key]
+                localStorage.setItem('carrinho',JSON.stringify(carrinho));
+                atualizarPrecoTotal();
+                console.log('teste');
+                item_carrinho[key].innerHTML = ``;
+            }
+        });
 
         for(const key in item_carrinho_quantidade){
 
@@ -78,7 +89,14 @@
                     atualizarPrecoTotal();
                 }
             });
-
+            item_carrinho_quantidade[key].addEventListener('keyup',()=>{
+                // console.log(item_carrinho_quantidade[key].value);
+                if(item_carrinho_quantidade[key].value != carrinho[key].quantidade){
+                    carrinho[key].quantidade = item_carrinho_quantidade[key].value;
+                    localStorage.setItem('carrinho',JSON.stringify(carrinho));
+                    atualizarPrecoTotal();
+                }
+            });
             item_carrinho_remover[key].addEventListener('click',()=>{
 
                 delete carrinho[key]
@@ -89,6 +107,7 @@
 
             });
         }
+        document.querySelector()
         // for(const key in item_carrinho_quantidade){
             
         //     item_carrinho_quantidade[key].addEventListener('click',()=>{
@@ -107,8 +126,19 @@
             compraTotal = compraTotal.toFixed(2);
             finalizarCompra.innerHTML = `<p>Total: R$`+compraTotal+`</p>
             <button class="botao-comprar">Finalizar Compra</button>`;
+            document.querySelector('.carrinho .botao-comprar').addEventListener('click',()=>{
+                for(const key in item_carrinho){
+                    delete carrinho[key]
+                    localStorage.setItem('carrinho',JSON.stringify(carrinho));
+                    atualizarPrecoTotal();
+                    console.log('teste');
+                    item_carrinho[key].innerHTML = ``;
+                }
+            });
             return compraTotal;
         }
+        
+        
 
 
     </script>
