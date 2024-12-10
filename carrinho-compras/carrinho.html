@@ -37,7 +37,7 @@
 
         let carrinho = localStorage.getItem('carrinho');
         carrinho = JSON.parse(carrinho);
-        // console.log(carrinho);
+        console.log(carrinho);
         let itens = document.querySelector('.actualCarrinho');
         let compraTotal = 0;
         for(const key in carrinho) {
@@ -65,13 +65,17 @@
         </div>`;
         // let item_carrinho = document.querySelectorAll('.item-carrinho');
         let item_carrinho_quantidade = document.querySelectorAll('.item-info .quantidade');
+
         let item_carrinho_remover = document.querySelectorAll('.item-carrinho .botao-remover');
         let item_carrinho = document.querySelectorAll('.item-carrinho');
-        console.log(item_carrinho_quantidade);
+        // console.log(item_carrinho);
+        // console.log(item_carrinho_quantidade);
         // console.log(document.querySelector('.carrinho .botao-comprar'));
         document.querySelector('.carrinho .botao-comprar').addEventListener('click',()=>{
             for(const key in item_carrinho){
-                delete carrinho[key]
+                // delete carrinho[key];
+                carrinho.splice(key,1);
+                // removerBagunca(key);
                 localStorage.setItem('carrinho',JSON.stringify(carrinho));
                 atualizarPrecoTotal();
                 console.log('teste');
@@ -79,7 +83,7 @@
             }
         });
 
-        for(const key in item_carrinho_quantidade){
+        for(const key in carrinho){
 
             item_carrinho_quantidade[key].addEventListener('click',()=>{
                 // console.log(item_carrinho_quantidade[key].value);
@@ -99,10 +103,15 @@
             });
             item_carrinho_remover[key].addEventListener('click',()=>{
 
-                delete carrinho[key]
+                // delete carrinho[key];
+                carrinho.splice(key,1);
+                // removerBagunca(key);
                 localStorage.setItem('carrinho',JSON.stringify(carrinho));
                 atualizarPrecoTotal();
                 item_carrinho[key].innerHTML = ``;
+                item_carrinho.splice(key,1);
+                
+                atualizarBotoes();
                 console.log(carrinho);
 
             });
@@ -128,7 +137,9 @@
             <button class="botao-comprar">Finalizar Compra</button>`;
             document.querySelector('.carrinho .botao-comprar').addEventListener('click',()=>{
                 for(const key in item_carrinho){
-                    delete carrinho[key]
+                    // delete carrinho[key];
+                    carrinho.splice(key,1);
+                    // removerBagunca(key);
                     localStorage.setItem('carrinho',JSON.stringify(carrinho));
                     atualizarPrecoTotal();
                     console.log('teste');
@@ -137,8 +148,46 @@
             });
             return compraTotal;
         }
-        
-        
+        function atualizarBotoes(){
+                for(const key in carrinho){
+
+                item_carrinho_quantidade[key].addEventListener('click',()=>{
+                    // console.log(item_carrinho_quantidade[key].value);
+                    if(item_carrinho_quantidade[key].value != carrinho[key].quantidade){
+                        carrinho[key].quantidade = item_carrinho_quantidade[key].value;
+                        localStorage.setItem('carrinho',JSON.stringify(carrinho));
+                        atualizarPrecoTotal();
+                    }
+                });
+                item_carrinho_quantidade[key].addEventListener('keyup',()=>{
+                    // console.log(item_carrinho_quantidade[key].value);
+                    if(item_carrinho_quantidade[key].value != carrinho[key].quantidade){
+                        carrinho[key].quantidade = item_carrinho_quantidade[key].value;
+                        localStorage.setItem('carrinho',JSON.stringify(carrinho));
+                        atualizarPrecoTotal();
+                    }
+                });
+                item_carrinho_remover[key].addEventListener('click',()=>{
+
+                    // delete carrinho[key];
+                    carrinho.splice(key,1);
+                    // removerBagunca(key);
+                    localStorage.setItem('carrinho',JSON.stringify(carrinho));
+                    atualizarPrecoTotal();
+                    item_carrinho[key].innerHTML = ``;
+                    item_carrinho.splice(key,1);
+                    atualizarBotoes();
+                    console.log(carrinho);
+
+                });
+            }
+        }
+        function removerBagunca(key){
+            carrinho.splice(key,1);
+            // item_carrinho.splice(key,1);
+            // item_carrinho_quantidade.splice(key,1);
+            // item_carrinho_remover.splice(key,1);
+        }
 
 
     </script>

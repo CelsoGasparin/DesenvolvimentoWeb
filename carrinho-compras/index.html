@@ -117,7 +117,8 @@
           'quantidade': 1
 
         };
-        let carrinho = JSON.parse(localStorage.getItem('carrinho'));
+        // let carrinho = [];
+        let  carrinho = JSON.parse(localStorage.getItem('carrinho'));
         console.log(carrinho);
         let carrinhoLength = 0;
         for(const keyC in carrinho){
@@ -127,17 +128,21 @@
           carrinho = {[0]:produto};
           
         }else{
-          let isUnique = 0;
+          let isntUnique = 0;
+          let actualCarrinho = [];
           for(const keyC in carrinho){
-            if(produto.nome != carrinho[keyC].nome){
-              isUnique++;
+            if(produto.nome == carrinho[keyC].nome){
+              isntUnique++;
               // carrinho[keyC].quantidade += 1;
             }//else{
             //   isUnique++;
             // }
+            actualCarrinho.push(carrinho[keyC]);
           }
-          if(isUnique == carrinhoLength){
-            carrinho = {...carrinho,[carrinhoLength] : produto}
+          // console.log(actualCarrinho);
+          if(isntUnique < 1){
+            carrinho = actualCarrinho;
+            carrinho.push(produto);
           }
         }
         
