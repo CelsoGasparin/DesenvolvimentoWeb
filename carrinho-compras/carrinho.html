@@ -69,13 +69,14 @@
         let item_carrinho_remover = document.querySelectorAll('.item-carrinho .botao-remover');
         let item_carrinho = document.querySelectorAll('.item-carrinho');
         // console.log(item_carrinho);
+        console.log(item_carrinho[1])
         // console.log(item_carrinho_quantidade);
         // console.log(document.querySelector('.carrinho .botao-comprar'));
         document.querySelector('.carrinho .botao-comprar').addEventListener('click',()=>{
             for(const key in item_carrinho){
                 // delete carrinho[key];
                 carrinho.splice(key,1);
-                // removerBagunca(key);
+                removerBagunca(key);
                 localStorage.setItem('carrinho',JSON.stringify(carrinho));
                 atualizarPrecoTotal();
                 console.log('teste');
@@ -105,11 +106,11 @@
 
                 // delete carrinho[key];
                 carrinho.splice(key,1);
-                // removerBagunca(key);
+                removerBagunca(key);
                 localStorage.setItem('carrinho',JSON.stringify(carrinho));
                 atualizarPrecoTotal();
                 item_carrinho[key].innerHTML = ``;
-                item_carrinho.splice(key,1);
+                // item_carrinho.splice(key,1);
                 
                 atualizarBotoes();
                 console.log(carrinho);
@@ -139,7 +140,7 @@
                 for(const key in item_carrinho){
                     // delete carrinho[key];
                     carrinho.splice(key,1);
-                    // removerBagunca(key);
+                    removerBagunca(key);
                     localStorage.setItem('carrinho',JSON.stringify(carrinho));
                     atualizarPrecoTotal();
                     console.log('teste');
@@ -171,7 +172,7 @@
 
                     // delete carrinho[key];
                     carrinho.splice(key,1);
-                    // removerBagunca(key);
+                    removerBagunca(key);
                     localStorage.setItem('carrinho',JSON.stringify(carrinho));
                     atualizarPrecoTotal();
                     item_carrinho[key].innerHTML = ``;
@@ -183,12 +184,40 @@
             }
         }
         function removerBagunca(key){
-            carrinho.splice(key,1);
-            // item_carrinho.splice(key,1);
-            // item_carrinho_quantidade.splice(key,1);
-            // item_carrinho_remover.splice(key,1);
-        }
+            // let chave = 0;
+            for(const chave in item_carrinho){
+                if(chave > key && typeof chave == 'number'){
+                    console.log(chave);
+                    // item_carrinho[chave-1].innerHTML = item_carrinho[chave].innerHTML
+                }
+            }
 
+
+
+
+
+
+
+
+
+
+
+
+
+            // console.log(item_carrinho);
+            // console.log('primeira parte');
+            // item_carrinho.forEach(elemento => {
+            //     if(chave > key){
+            //         console.log(item_carrinho[chave-1])
+            //         item_carrinho[chave-1].innerHTML = item_carrinho[chave].innerHTML
+            //         console.log(item_carrinho[chave-1])
+            //     }
+            //     chave++;
+            // });
+            // console.log(item_carrinho)
+            // console.log('parte final');
+        }
+        
 
     </script>
 
