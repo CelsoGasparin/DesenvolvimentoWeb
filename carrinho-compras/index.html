@@ -96,16 +96,16 @@
 
     // let botoes = document.querySelectorAll('.botao');
     // console.log(botoes);
-    console.log(produtoItem);
+    // console.log(produtoItem);
 
     // localStorage.removeItem('carrinho');
     
 
 
     for(let key in produtoItemBTN) {
-      console.log(key);
-      console.log(produtoItemNome[key])
-      console.log(produtoItemPreco[key])
+      // console.log(key);
+      // console.log(produtoItemNome[key])
+      // console.log(produtoItemPreco[key])
 
       produtoItemBTN[key].addEventListener('click',(event)=>{
 
@@ -119,14 +119,23 @@
         };
         // let carrinho = [];
         let  carrinho = JSON.parse(localStorage.getItem('carrinho'));
-        console.log(carrinho);
+        // console.log(carrinho);
         let carrinhoLength = 0;
+        let allValuesEnull = 0;
         for(const keyC in carrinho){
           carrinhoLength++;
+          if(carrinho[keyC] == null){
+            allValuesEnull++;
+          }
         }
-        if(carrinho == null || carrinhoLength < 1){
-          carrinho = {[0]:produto};
+        // console.log(carrinhoLength);
+        if((carrinho == null || carrinhoLength < 1) || (allValuesEnull > 0)){
+          // console.log(allValuesEnull > 0);
+          // console.log(carrinho == null);
           
+          // console.log(carrinhoLength < 1)
+          carrinho = {[0]:produto};
+          // console.log(carrinho);
         }else{
           let isntUnique = 0;
           let actualCarrinho = [];
@@ -141,11 +150,13 @@
           }
           // console.log(actualCarrinho);
           if(isntUnique < 1){
+            // console.log('teste');
             carrinho = actualCarrinho;
             carrinho.push(produto);
           }
         }
-        
+        // console.log(carrinho);
+        // console.log('ESSE É O CARRINHO');
         localStorage.setItem('carrinho',JSON.stringify(carrinho))
         
 

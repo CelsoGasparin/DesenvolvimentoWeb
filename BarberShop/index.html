@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>BarberShop(não me contaram o nome(sou eu que tenho que escolher ele))</title>
+</head>
+<body>
+    <img  class= "loadingScreen" src="https://ava.ifpr.edu.br/pluginfile.php/1/theme_boost_union/logocompact/300x300/1731446139/logo_ead%20%285%29%20%282%29.png" alt="AAAAA">
+
+
+
+    <div class="cadScreen">
+
+        <input class="caixaNomeCad" type="text" placeholder="Informe o Seu Nome">
+
+        <input class="caixaEmailCad" type="email" placeholder="example@domain.com">
+
+        <input class="caixaSenhaCad" type="password" placeholder="Password" >
+
+        <input class="caixaSenhaRepCad" type="password" placeholder="Reescreva tua Password" >
+
+        <button>Cadastrar Conta</button>
+
+    </div>
+
+
+
+
+    <div class="loginScreen">
+
+        <input class="caixaNomeLogin" type="text" placeholder="Informe o Seu Nome">
+
+        <input class="caixaEmailLogin" type="email" placeholder="example@domain.com">
+
+        <input class="caixaSenhaLogin" type="password" placeholder="Password" >
+
+        <button>Logar</button>
+
+    </div>
+
+
+
+    <script>
+
+        document.querySelector('.loginScreen').style.display = 'none';
+        document.querySelector('.cadScreen').style.display = 'none';
+        setTimeout(mostrarTroco,5000);
+        //Tela de loading
+        
+        
+        function mostrarTroco(){
+            document.querySelector('.loadingScreen').style.display = 'none';
+
+            if(localStorage.getItem('user') === null){
+                document.querySelector('.cadScreen').style.display = 'block';
+                let botaoCAD = document.querySelector('.cadScreen button');
+
+                botaoCAD.addEventListener('click',()=>{
+                    
+                })
+
+
+                // console.log(botaoCAD);
+            }else{
+                document.querySelector('.loginScreen').style.display = 'block';
+            }
+
+
+        }
+
+        function validaEmail(email){
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+            if(!emailRegex.test(email)){
+                
+            }else{
+                
+            }
+        
+            
+
+        }
+
+    </script>
+
+
+</body>
+</html>

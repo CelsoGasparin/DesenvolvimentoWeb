@@ -74,9 +74,9 @@
         // console.log(document.querySelector('.carrinho .botao-comprar'));
         document.querySelector('.carrinho .botao-comprar').addEventListener('click',()=>{
             for(const key in item_carrinho){
-                // delete carrinho[key];
-                carrinho.splice(key,1);
-                removerBagunca(key);
+                delete carrinho[key];
+                // carrinho.splice(key,1);
+                // removerBagunca(key);
                 localStorage.setItem('carrinho',JSON.stringify(carrinho));
                 atualizarPrecoTotal();
                 console.log('teste');
@@ -104,9 +104,9 @@
             });
             item_carrinho_remover[key].addEventListener('click',()=>{
 
-                // delete carrinho[key];
-                carrinho.splice(key,1);
-                removerBagunca(key);
+                delete carrinho[key];
+                // carrinho.splice(key,1);
+                // removerBagunca(key);
                 localStorage.setItem('carrinho',JSON.stringify(carrinho));
                 atualizarPrecoTotal();
                 item_carrinho[key].innerHTML = ``;
@@ -138,9 +138,9 @@
             <button class="botao-comprar">Finalizar Compra</button>`;
             document.querySelector('.carrinho .botao-comprar').addEventListener('click',()=>{
                 for(const key in item_carrinho){
-                    // delete carrinho[key];
-                    carrinho.splice(key,1);
-                    removerBagunca(key);
+                    delete carrinho[key];
+                    // carrinho.splice(key,1);
+                    // removerBagunca(key);
                     localStorage.setItem('carrinho',JSON.stringify(carrinho));
                     atualizarPrecoTotal();
                     console.log('teste');
@@ -170,9 +170,9 @@
                 });
                 item_carrinho_remover[key].addEventListener('click',()=>{
 
-                    // delete carrinho[key];
-                    carrinho.splice(key,1);
-                    removerBagunca(key);
+                    delete carrinho[key];
+                    // carrinho.splice(key,1);
+                    // removerBagunca(key);
                     localStorage.setItem('carrinho',JSON.stringify(carrinho));
                     atualizarPrecoTotal();
                     item_carrinho[key].innerHTML = ``;
@@ -183,40 +183,44 @@
                 });
             }
         }
-        function removerBagunca(key){
-            // let chave = 0;
-            for(const chave in item_carrinho){
-                if(chave > key && typeof chave == 'number'){
-                    console.log(chave);
-                    // item_carrinho[chave-1].innerHTML = item_carrinho[chave].innerHTML
-                }
-            }
+        // function removerBagunca(key){
+        //     // let chave = 0;
+        //     let listaChaves = [];
+        //     console.log(item_carrinho);
+        //     for(const keyCARR in carrinho){
+        //         listaChaves.push(keyCARR);
+        //         for(const chave in item_carrinho){
+        //             if(item_carrinho[chave].innerHTML){
+                        
+                        
+        //             }
+        //         }
+        //     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-            // console.log(item_carrinho);
-            // console.log('primeira parte');
-            // item_carrinho.forEach(elemento => {
-            //     if(chave > key){
-            //         console.log(item_carrinho[chave-1])
-            //         item_carrinho[chave-1].innerHTML = item_carrinho[chave].innerHTML
-            //         console.log(item_carrinho[chave-1])
-            //     }
-            //     chave++;
-            // });
-            // console.log(item_carrinho)
-            // console.log('parte final');
-        }
+        //     for(const chave in item_carrinho){
+        //         if(chave > key && !isNaN(chave)){
+        //             // console.log(chave);
+                     
+        //             console.log(listaChaves);
+        //             console.log(item_carrinho_remover);
+        //             item_carrinho[chave-1].innerHTML = item_carrinho[chave].innerHTML
+        //             item_carrinho_remover
+        //             // item_carrinho_remover[chave-1].innerHTML
+        //         }
+        //     }
+        //     // console.log(item_carrinho);
+        //     // console.log('primeira parte');
+        //     // item_carrinho.forEach(elemento => {
+        //     //     if(chave > key){
+        //     //         console.log(item_carrinho[chave-1])
+        //     //         item_carrinho[chave-1].innerHTML = item_carrinho[chave].innerHTML
+        //     //         console.log(item_carrinho[chave-1])
+        //     //     }
+        //     //     chave++;
+        //     // });
+        //     // console.log(item_carrinho)
+        //     // console.log('parte final');
+        // }
         
 
     </script>
