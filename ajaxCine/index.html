@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFind Cinema</title>
+</head>
+<body>
+    
+    <div>
+
+        <h1>IFind Cinema</h1>
+        <p class="noResult">Nenhum Filme com esse nome Encontrado</p>
+        <input type="text" id="movieName" placeholder="Digite o nome do filme">
+        <button id="searchButton">Buscar</button>
+        <h2>Lista de filmes buscados</h2>
+        <div id="results"></div>
+
+    </div>
+
+
+
+    <script>
+
+        let noResult  = document.querySelector('.noResult'); 
+        noResult.style.display = 'none';
+        noResult.style.fontSize = '20px';
+        noResult.style.background = 'red';
+        noResult.style.width = '345px';
+        noResult.style.paddingLeft = '50px';
+        noResult.style.paddingRight = '50px';
+        noResult.style.borderRadius = '10px';
+        noResult.style.borderColor = 'black';
+        noResult.style.borderWidth = '3px';
+        noResult.style.border = 'solid';
+        // console.log(noResult);
+        
+
+        let movieInput = document.querySelector('input');
+        let movieButton = document.querySelector('button');
+        movieButton.addEventListener('click',()=>{
+            // console.log(movieInput.value);
+            cineFind(movieInput.value);
+        });
+
+
+
+
+        function cineFind(movieName){
+
+            const apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=2dbca7a779fef19d8dc0acc77384df5a&query=${movieName}&language=pt-BR`;
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    // console.log(data);
+                    let movie = null;
+                    if(data.results.length > 0){
+                        for(const keyCine in data.results) {
+                            if(data.results[keyCine].title.toLowerCase() == movieName.toLowerCase()) {
+                                // noResult.style.display = 'none';
+                               
+                                movie = data.results[keyCine];
+        
+                                document.getElementById('results').innerHTML +=
+                                `
+                                <h2>${movie.title}</h2>
+                                <p>${movie.overview}</p>
+                                <img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="${movie.title}">
+                                `;
+                                
+                            }
+                        } 
+                    }
+                    movie == null ? noResult.style.display = 'block' : noResult.style.display = 'none';
+                    
+                })
+                .catch(error => {
+                    console.error('Erro:', error);
+                });
+        }
+
+    </script>
+
+</body>
+</html>
