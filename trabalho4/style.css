@@ -1,0 +1,30 @@
+.sidebar{
+    color: rgb(220, 249, 255);
+    transition: transform 0.18s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar a{
+    text-decoration: none;
+    color: rgb(220, 249, 255);
+    padding: 10px ;
+}
+.sidebar a:hover{
+    background-color: black;
+}
+
+
+
+
+@media(max-width: 992px){
+
+    .sidebar{
+        position: fixed;
+        transform: translateX(-100%);
+        z-index: 1;
+    }
+    .sidebar-show{
+        transform: translateX(0);
+    }
+
+}
