@@ -1,0 +1,44 @@
+.sidebar{
+    color: rgb(220, 249, 255);
+    transition: transform 0.18s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar a{
+    text-decoration: none;
+    color: rgb(220, 249, 255);
+    padding: 10px ;
+}
+.sidebar a:hover{
+    background-color: black;
+}
+
+
+
+
+@media(max-width: 992px){
+
+    .sidebar{
+        position: fixed;
+        transform: translateX(-100%);
+        z-index: 1;
+    }
+    .sidebar-show{
+        transform: translateX(0);
+    }
+
+}
+.meta-fevereiro{
+    height: 7vh;
+}
+.valor-fevereiro{
+    font-size: 3vh;
+}
+.Botao-FODA{
+    border-radius: 10px;
+    background-color: black;
+    color: rgb(220, 249, 255);
+    width: 40vh;
+    height: 5vh;
+    font-size: 3vh;
+}

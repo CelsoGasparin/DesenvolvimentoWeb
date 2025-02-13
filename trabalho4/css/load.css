@@ -1,0 +1,43 @@
+body{
+
+    display: flex;
+    justify-content: center;
+    /* flex-direction: column; */
+    
+}
+:root , .row {
+    background-color: rgb(18, 18, 18);;
+}
+
+.loadingScreen{
+    
+    
+    margin-top: 8%;
+
+}
+.loginScreen,.cadScreen{
+    /* flex-direction: column; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* height: 200px; */
+    width: 45vh;
+    height: 44vh;
+
+}
+.loginScreen{
+    /* width: 45vh; */
+    height: 35vh;
+}
+.card{
+    margin-top: 20vh;
+    
+}
+.loginScreen input,.loginScreen button ,.cadScreen input ,.cadScreen button{
+    margin-top: 3%;
+    width: 45vh;
+    height: 6vh;
+    font-size: 2vh;
+    border-radius: 8px;
+    /* border-color: red; */
+}
+
